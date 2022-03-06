@@ -6,8 +6,11 @@ export default class Card {
     }
 
     render(element) {
-        const div = document.createElement('div')
-        div.classList.add('card')
+        const divContainer = document.createElement('div')
+        divContainer.classList.add('.container')
+
+        const divCard = document.createElement('div')
+        divCard.classList.add('card')
 
         const img = new Image()
         img.src = this.pokemon.imgUrl
@@ -18,14 +21,24 @@ export default class Card {
         const pName = document.createElement('p')
         pName.innerText = `Nome: ${this.pokemon.name}`
 
-        const pImgUrl = document.createElement('p')
-        pImgUrl.innerText = img.src
+        const aImgUrl = document.createElement('a')
+        aImgUrl.innerText = img.src
+        aImgUrl.href = img.src
+        aImgUrl.target = '_blank'
 
-        div.appendChild(img)
-        div.appendChild(pPokeId)
-        div.appendChild(pName)
-        div.appendChild(pImgUrl)
+        divContainer.appendChild(divCard)
+        divCard.appendChild(img)
+        divCard.appendChild(pPokeId)
+        divCard.appendChild(pName)
+        divCard.appendChild(aImgUrl)
 
-        element.appendChild(div)
+        element.appendChild(divContainer)
+
+        divCard.onclick = (event) => {
+            if (event.target == aImgUrl) return
+            this.showDetails()
+        }
     }
+
+    async showDetails() {}
 }
