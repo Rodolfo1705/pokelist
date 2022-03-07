@@ -3,6 +3,7 @@ export default class Pokemon {
     id
     imgUrl
     types
+    card
 
     constructor(name, id, imgUrl) {
         this.name = name

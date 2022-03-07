@@ -28,6 +28,7 @@ async function populatePokeArray() {
 
         const card = new Card(pokemon)
         card.render(divContainer)
+        pokemon.card = card
     }
 }
 
@@ -66,6 +67,20 @@ function getPokemonUrlImg() {
     }
     return imgsUrlArray
 }
+
+const searchInput = document.querySelector('input.search')
+
+searchInput.oninput = () => {
+    const value = searchInput.value.trim().toLowerCase()
+    pokeArray.forEach((pokemon) => {
+        if (pokemon.name.toLowerCase().includes(value)) {
+            pokemon.card.show()
+        } else {
+            pokemon.card.hide()
+        }
+    })
+}
+
 await populatePokeArray()
 
 //bonus function

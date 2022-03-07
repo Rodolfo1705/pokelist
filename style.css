@@ -70,12 +70,20 @@ body {
     padding: 13px;
 }
 
+.search {
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: rgb(230, 230, 230);
+}
+
 a {
     color: rgb(48, 75, 207);
     text-decoration: none;
 }
 
 header {
+    display: flex;
+    justify-content: space-around;
     padding: 20px;
 }
 

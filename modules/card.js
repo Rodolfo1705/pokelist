@@ -1,5 +1,6 @@
 export default class Card {
     pokemon
+    element
 
     constructor(pokemon) {
         this.pokemon = pokemon
@@ -33,5 +34,15 @@ export default class Card {
         divCard.onclick = (event) => {
             if (event.target == aImgUrl) return
         }
+
+        this.element = divCard
+    }
+
+    show() {
+        this.element.classList.remove('hidden')
+    }
+
+    hide() {
+        this.element.classList.add('hidden')
     }
 }
