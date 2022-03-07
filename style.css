@@ -99,6 +99,7 @@ button {
     cursor: pointer;
     background-color: rgb(230, 230, 230);
     transition: background-color 0.2s;
+    white-space: nowrap;
 }
 
 button:hover {
