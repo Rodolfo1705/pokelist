@@ -6,9 +6,6 @@ export default class Card {
     }
 
     render(element) {
-        const divContainer = document.createElement('div')
-        divContainer.classList.add('.container')
-
         const divCard = document.createElement('div')
         divCard.classList.add('card')
 
@@ -26,19 +23,15 @@ export default class Card {
         aImgUrl.href = img.src
         aImgUrl.target = '_blank'
 
-        divContainer.appendChild(divCard)
         divCard.appendChild(img)
         divCard.appendChild(pPokeId)
         divCard.appendChild(pName)
         divCard.appendChild(aImgUrl)
 
-        element.appendChild(divContainer)
+        element.appendChild(divCard)
 
         divCard.onclick = (event) => {
             if (event.target == aImgUrl) return
-            this.showDetails()
         }
     }
-
-    async showDetails() {}
 }
