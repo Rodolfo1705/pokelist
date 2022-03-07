@@ -131,6 +131,8 @@ async function generateGroupedPokemon(element) {
     await populatePokeTypes()
     const typesArray = generateTypesArray()
     renderTypesContainer()
+
+    document.querySelector('div.spinner').remove()
 }
 
 generateGroupedPokemon(divContainerTypes)

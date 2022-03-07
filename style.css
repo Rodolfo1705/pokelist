@@ -37,6 +37,26 @@ body {
     padding: 10px;
 }
 
+.spinner {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid rgb(37, 100, 177);
+    border-top-color: transparent;
+    animation: spinner 0.8s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .hidden {
     display: none !important;
 }
