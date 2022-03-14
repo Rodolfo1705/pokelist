@@ -20,7 +20,7 @@ toggleButton.onclick = () => {
 async function populatePokeArray() {
     const names = await getPokemonName()
     const ids = await getPokemonId()
-    const imgsUrl = await getPokemonUrlImg()
+    const imgsUrl = getPokemonUrlImg()
 
     for (let i = 0; i < names.length; i++) {
         const pokemon = new Pokemon(names[i], ids[i], imgsUrl[i])
